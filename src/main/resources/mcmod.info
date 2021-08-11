@@ -1,0 +1,16 @@
+[
+    {
+        "modid": "syukurimu_mod",
+        "name": "Syukurimu_mod",
+        "description": "Let's play with the best syukurimu.",
+        "version": "1.0.0",
+        "mcversion": "1.12.2",
+        "url": "",
+        "updateUrl": "",
+        "authorList": ["syukurimu"],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
+]
