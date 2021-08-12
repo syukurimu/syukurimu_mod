@@ -1,8 +1,8 @@
 [
     {
-        "modid": "syukurimu_mod",
-        "name": "Syukurimu_mod",
-        "description": "Let's play with the best syukurimu.",
+        "modid": "syukurimu",
+        "name": "Cream Puff",
+        "description": "Let's play with the best cream puff.",
         "version": "1.0.0",
         "mcversion": "1.12.2",
         "url": "",

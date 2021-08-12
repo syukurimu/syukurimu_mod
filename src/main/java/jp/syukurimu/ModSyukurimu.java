@@ -20,7 +20,7 @@ public class ModSyukurimu {
     public static final String MOD_DEPENDENCIES = "";
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.12,1.12.2]";
 
-    @Instance("syukurimu_instance")
+    @Instance("syukurimu")
     public static ModSyukurimu instance;
 
     public static Item item;
