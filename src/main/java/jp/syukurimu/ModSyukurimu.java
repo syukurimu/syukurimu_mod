@@ -1,5 +1,6 @@
 package jp.syukurimu;
 
+import com.ibm.icu.util.RangeDateRule;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
@@ -22,14 +23,21 @@ public class ModSyukurimu {
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.12,1.12.2]";
 
     @Instance("syukurimu")
-    public static ModSyukurimu instance;
 
-    public static Item item;
+    public static ModSyukurimu instance;
+    public static Item syukurimu;
+    public static Item Syukurimu_maccha;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        item = new ItemSyukurimu();
-        ForgeRegistries.ITEMS.register(item);
+        syukurimu = new ItemSyukurimu();
+        Syukurimu_maccha = new ItemSyukurimuMaccha();
+
+        ForgeRegistries.ITEMS.register(syukurimu);
+        if (event.getSide().isClient()) {
+            registerModels();
+        }
+        ForgeRegistries.ITEMS.register(Syukurimu_maccha);
         if (event.getSide().isClient()) {
             registerModels();
         }
@@ -37,8 +45,10 @@ public class ModSyukurimu {
 
     @SideOnly(Side.CLIENT)
     public void registerModels() {
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(MOD_ID, "syukurimu"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(syukurimu, 0, new ModelResourceLocation(new ResourceLocation(MOD_ID, "syukurimu"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Syukurimu_maccha, 0, new ModelResourceLocation(new ResourceLocation(MOD_ID, "syukurimu_maccha"), "inventory"));
     }
+
 }
 
 
