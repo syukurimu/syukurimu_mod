@@ -1,5 +1,4 @@
 {
   "parent":"item/generated",
-  "textures":{"layer0":"syukurimu:items/plain_cream_puff"
-  }
+  "textures":{"layer0":"syukurimu:items/cream_puff"}
 }

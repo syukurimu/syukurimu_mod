@@ -2,6 +2,7 @@ package jp.syukurimu;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
@@ -27,7 +28,7 @@ public class ModSyukurimu {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        item = new ItemSyukurimu().setTranslationKey("syukurimu").setRegistryName(new ResourceLocation(MOD_ID, "syukurimu"));
+        item = new ItemSyukurimu();
         ForgeRegistries.ITEMS.register(item);
         if (event.getSide().isClient()) {
             registerModels();
