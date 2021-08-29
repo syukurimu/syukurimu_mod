@@ -18,7 +18,7 @@ public class ItemSyukurimu extends ItemFood {
 
     public void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
         super.onFoodEaten(stack, worldIn, player);
-        PotionEffect effect = new PotionEffect(Potion.getPotionById(10), 100, 256);
+        PotionEffect effect = new PotionEffect(Potion.getPotionById(10), 5000, 255);
         player.addPotionEffect(effect);
     }
 
