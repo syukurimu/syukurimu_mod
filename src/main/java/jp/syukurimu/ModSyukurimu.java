@@ -1,6 +1,8 @@
 package jp.syukurimu;
 
 import com.ibm.icu.util.RangeDateRule;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
@@ -41,6 +43,7 @@ public class ModSyukurimu {
     public static Item syukurimu_fluffy;
     public static Item syukurimu_glass;
 
+    public static Block syukurimu_block;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -59,6 +62,7 @@ public class ModSyukurimu {
         syukurimu_fish = new ItemSyukurimuFish();
         syukurimu_fluffy = new ItemSyukurimuFluffy();
         syukurimu_glass = new ItemSyukurimuGlass();
+        syukurimu_block = new BlockSyukurimu(Material.CAKE);
 
         ForgeRegistries.ITEMS.register(syukurimu);
         ForgeRegistries.ITEMS.register(syukurimu_gold);
@@ -75,6 +79,9 @@ public class ModSyukurimu {
         ForgeRegistries.ITEMS.register(syukurimu_fish);
         ForgeRegistries.ITEMS.register(syukurimu_fluffy);
         ForgeRegistries.ITEMS.register(syukurimu_glass);
+
+        ForgeRegistries.BLOCKS.register(syukurimu_block);
+
         if (event.getSide().isClient()) {
             registerModels();
         }
@@ -98,6 +105,7 @@ public class ModSyukurimu {
         ModelLoader.setCustomModelResourceLocation(syukurimu_fluffy, 0, new ModelResourceLocation(new ResourceLocation(MOD_ID, "syukurimu_fluffy"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(syukurimu_glass, 0, new ModelResourceLocation(new ResourceLocation(MOD_ID, "syukurimu_glass"), "inventory"));
 
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(syukurimu_block), 0, new ModelResourceLocation(new ResourceLocation(MOD_ID, "syukurimu_block"), "inventory"));
     }
 
 }
