@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemFood;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
@@ -79,7 +80,7 @@ public class ModSyukurimu {
         ForgeRegistries.ITEMS.register(syukurimu_fish);
         ForgeRegistries.ITEMS.register(syukurimu_fluffy);
         ForgeRegistries.ITEMS.register(syukurimu_glass);
-
+        ForgeRegistries.ITEMS.register(new ItemBlock(syukurimu_block).setRegistryName(syukurimu_block.getRegistryName()));
         ForgeRegistries.BLOCKS.register(syukurimu_block);
 
         if (event.getSide().isClient()) {
